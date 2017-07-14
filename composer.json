@@ -1,13 +1,25 @@
 {
-    "name": "admin/yii2-ucpaas",
-    "description": "Yii2 ucpaas sms sdk",
-    "type": "library",
+    "name": "evans/yii2-ucpaas",
+    "description": "ucpaas sms sdk for Yii2 ",
+    "keywords": ["yii", "sms", "ucpaas", "yii2-ucpaas"],
     "license": "MIT",
+    "type": "yii2-extension",
     "authors": [
         {
             "name": "EvansYe",
             "email": "evanscslg@sina.cn"
         }
     ],
-    "require": {}
+    "support": {
+        "issues": "https://github.com/EvansYe2/yii2-ucpaas/issues",
+        "source": "https://github.com/EvansYe2/yii2-ucpaas"
+    },
+    "require": {
+        "yiisoft/yii2": "~2.0.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "evans\\ucpaas\\": "src/"
+        }
+    }
 }
