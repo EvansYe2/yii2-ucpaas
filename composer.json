@@ -1,0 +1,13 @@
+{
+    "name": "admin/yii2-ucpaas",
+    "description": "Yii2 ucpaas sms sdk",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "EvansYe",
+            "email": "evanscslg@sina.cn"
+        }
+    ],
+    "require": {}
+}
