@@ -10,13 +10,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 To install, either run
 
 ```
-$ php composer.phar require evans/yii2-ucpaas
+$ php composer.phar require evans/yii2-ucpaas "dev-master"
 ```
 
 or add
 
 ```
-"evans/yii2-ucpaas": "*"
+"evans/yii2-ucpaas": "dev-master"
 ```
 
 to the ```require``` section of your `composer.json` file.
