@@ -17,6 +17,7 @@ class SmsUcpaas extends Component
     public $token;//Auth Token
     public $appId;//应用id
     public $templateId;//模板ID
+	public $verifyCode;//语音验证码
 
     //初始化参数判断
     public function init(){
@@ -26,8 +27,6 @@ class SmsUcpaas extends Component
             throw new InvalidConfigException('token未设置');
         }elseif ($this->appId === null) {
             throw new InvalidConfigException('appId未设置');
-        }elseif ($this->templateId === null) {
-            throw new InvalidConfigException('templateId未设置');
         }
     }
 
@@ -46,6 +45,25 @@ class SmsUcpaas extends Component
         if(!empty($to)){
             $ucpass = new Ucpaas($options);
             $send = $ucpass->templateSMS($appId, $to, $templateId, $param);
+            return json_decode($send);
+        }
+    }
+	
+	/**
+     * @param string $type
+     * @return mixed|string
+     * @throws Exception
+     */
+    public function sendVoiceCode($to,$type = 'json'){
+
+        $options['accountsid'] = $this->accountsid;
+        $options['token'] = $this->token;
+        $appId = $this->appId;
+        $verifyCode = $this->verifyCode;
+        //初始化 $options必填
+        if(!empty($to)){
+            $ucpass = new Ucpaas($options);
+            $send = $ucpass->voiceCode($appId,$verifyCode,$to,$type);
             return json_decode($send);
         }
     }
